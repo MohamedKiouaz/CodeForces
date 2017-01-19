@@ -9,8 +9,7 @@ int main()
     for(int i = 0; i < n; i++) {
         std::cin >> d >> m;
         people += m-d;
-        if(capacity < people and i != n-1)
-            capacity = people;
+        capacity = capacity < people and i != n-1 ? people : capacity;
     }
     std::cout << capacity << std::endl;
 }
