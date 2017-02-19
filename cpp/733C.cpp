@@ -16,13 +16,12 @@ int main()
     ind = 0;
     bool no = false;
     for(int i = 0; i < m; i++) {
-        int step = 0;
         std::vector<unsigned long> SM;
         scanf("%d", &temp);
-        int acc = 0, maxx = monsters[ind], minn = maxx;
+        int acc = 0, maxx = monsters[ind], minn = maxx, step = 0;
         while(acc < temp and ind < n) {
             step += 1;
-            acc+= monsters[ind];
+            acc += monsters[ind];
             SM.push_back(monsters[ind]);
             maxx = monsters[ind] > maxx ? monsters[ind] : maxx;
             minn = monsters[ind] < minn ? monsters[ind] : minn;
@@ -39,16 +38,14 @@ int main()
         printf("NO\n");
     else {
         printf("YES\n");
-        for(int i = 0; i < sousmonstre.size(); i++) {
-            if(sousmonstre[i].size()>1) {
+        for(int i = 0; i < sousmonstre.size(); i++)
+            if(sousmonstre[i].size() > 1) {
                 m = std::distance(sousmonstre[i].begin(), std::max_element(sousmonstre[i].begin(), sousmonstre[i].end()));
                 for(int j = 0; j < m; j++)
-                    printf("%d L\n", m+i-j+1);
-                for(int j = m+1; j < sousmonstre[i].size(); j++)
-                    printf("%d R\n", m+i+i);
+                    printf("%d L\n", m + i - j + 1);
+                for(int j = m + 1; j < sousmonstre[i].size(); j++)
+                    printf("%d R\n", m + 2*i);
             }
-        }
-
     }
 
     return 0;

@@ -6,15 +6,14 @@ unsigned short x[2000];
 unsigned short y[2000];
 
 inline float distance(unsigned short x1, unsigned short y1, unsigned short x2 = 0, unsigned short y2 = 0) {
-    return sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+    return sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
 }
 
 int main()
 {
     using namespace std;
 
-    unsigned short n, m;
-    unsigned short barx = 0, bary = 0;
+    unsigned short n, m, barx = 0, bary = 0;
 
     scanf("%d %d", &n, &m);
     for (int i = 0; i < n + m; i++) {
