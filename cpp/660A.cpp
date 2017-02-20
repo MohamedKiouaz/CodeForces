@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
-inline bool euclide(unsigned int n, unsigned int m) {
-    unsigned int r;
+
+inline bool euclide(unsigned n, unsigned m) {
+    unsigned r;
     if(m > n) {
         r = n;
         n = m;
@@ -15,11 +16,11 @@ inline bool euclide(unsigned int n, unsigned int m) {
     return m != 1;
 }
 
-unsigned int liste[2000];
+unsigned liste[2000];
 
 int main()
 {
-    unsigned int n, temp0, temp1, acc = 0;
+    unsigned n, temp0, temp1, acc = 0;
     scanf("%d", &n);
     for (unsigned short i = 0; i < n; i++) {
         scanf("%d", &temp1);

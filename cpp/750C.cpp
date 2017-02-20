@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    int n, a, b, ci, di,mi=numeric_limits<int>::min(),ma=numeric_limits<int>::max();
+    int n, a, b, ci, di, mi = numeric_limits<int>::min(), ma = numeric_limits<int>::max();
     bool bb = true;
     cin >> n;
     for(int i = 0; i < n; i++) {
@@ -19,9 +19,10 @@ int main()
         b = di == 2 and b > 1899 ? 1899 : b;
         a = ci >= 0 or (mi - ci < a) ? a + ci : mi;
         b = ci <= 0 or (ma - ci > b) ? b + ci : ma;
-        if (a>b) break;
+        if (a > b)
+            break;
     }
-    if(a>b)
+    if(a > b)
         cout << "Impossible";
     else if (bb == true)
         cout << "Infinity";
