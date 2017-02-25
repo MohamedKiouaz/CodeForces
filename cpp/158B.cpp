@@ -1,12 +1,12 @@
-#include<iostream>
-#include <math.h>
+#include <iostream>
+#include <algorithm>
 
 int main() {
-    int n, temp, acc = 0;
-    std::cin >> n;
-    for(int i = 0; i < n; i++) {
-        std::cin >> temp;
-        acc += temp;
-    }
-    std::cout << ceil(double(acc)/4) << "\n";
+    int n, c[5] = {0}, test;
+	std::cin >> n;
+	while(n--) {
+		std::cin >> test;
+		c[test]++;
+	}
+	std::cout << c[4] + c[3] + (c[2] * 2 + std::max(c[1] - c[3], 0) + 3) / 4;
 }
