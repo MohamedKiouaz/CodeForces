@@ -11,17 +11,11 @@ def decto26(n):
 print(decto26(26))
 
 def b26todec(S):
-	acc = 0
-	for i,k in enumerate(S):
-		acc += (ord(k) - 64)*26**(len(S)-i-1)
-	return acc
+	return sum((ord(k) - 64)*26**(len(S)-i-1) for i,k in enumerate(S))
 	
 
 n = int(input())
-l = []
-for i in range(n):
-    l=l+[str(input())]
-
+l = [str(input()) for _ in range(n)]
 for k in l:
     if len(re.findall("([A-Z]+[0-9]+[A-Z]+[0-9]+)", k)) > 0:
         r = re.findall("[0-9]+", k)
